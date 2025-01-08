@@ -14,8 +14,14 @@
   --color-accent-bg: hsl(330, 100%, 98%);
 
   --fs-m: 16px;
-  --fs-l: 25px;
+  --fs-l: 22px;
   --fs-xl: 32px;
+
+
+  --spacing-s: calc(var(--fs-m) - 8px);
+  --spacing-m: calc(var(--fs-m) - 4px);
+  --spacing-l: calc(var(--fs-l) - 4px);
+  --spacing-xl: calc(var(--fs-xl) - 4px);
 }
 
 @font-face {
@@ -39,3 +45,58 @@
   font-weight: 700;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  color: var(--color-primary);
+  background-color: var(--color-base);
+
+  font-family: "Outfit";
+  font-size: var(--fs-m);
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+section {
+  max-width: var(--size-mobile);
+  margin: 0 auto;
+
+}
+
+.recipe-title {
+  line-height: 1.2;
+  font-family: "YoungSerif";
+  font-size: var(--fs-xl);
+  color: var(--color-primary-dark);
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.prep {
+  background-color: var(--color-accent-bg);
+  padding: var(--spacing-l);
+}
+
+.prep__title {
+  margin: 0;
+  font-family: "Outfit Bold";
+  font-size: var(--fs-l);
+  color: var(--color-accent-text);
+}
+
+.prep__item + .prep__item {
+  margin-top: var(--spacing-m);
+}
