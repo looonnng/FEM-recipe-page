@@ -17,7 +17,6 @@
   --fs-l: 22px;
   --fs-xl: 32px;
 
-
   --spacing-s: calc(var(--fs-m) - 8px);
   --spacing-m: calc(var(--fs-m) - 4px);
   --spacing-l: calc(var(--fs-l) - 4px);
@@ -60,11 +59,9 @@ body {
   line-height: 1.5;
 }
 
-
-section {
+main > section {
   max-width: var(--size-mobile);
   margin: 0 auto;
-
 }
 
 .recipe-title {
@@ -76,6 +73,7 @@ section {
 
 img {
   width: 100%;
+  max-width: 800px;
   display: block;
   margin: 0 auto;
 }
@@ -88,6 +86,7 @@ img {
 .prep {
   background-color: var(--color-accent-bg);
   padding: var(--spacing-l);
+  border-radius: var(--spacing-m);
 }
 
 .prep__title {
@@ -97,6 +96,72 @@ img {
   color: var(--color-accent-text);
 }
 
-.prep__item + .prep__item {
+.wrapper > section + section:not(.nutrition) {
+  border-bottom: 1px solid var(--color-primary-light);
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Style space between ::marker and list element's content */
+li {
+  padding-left: var(--spacing-l);
+}
+
+li::marker {
+  color: var(--color-accent-title);
+  font-family: "Outfit Bold";
+}
+
+li + li {
   margin-top: var(--spacing-m);
+}
+
+.section-title {
+  color: var(--color-accent-title);
+  font-family: "Youngserif";
+  font-size: var(--fs-xl);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr + tr {
+  border-top: 1px solid var(--color-primary-light);
+}
+
+td {
+  padding: 1rem 2rem;
+}
+
+li b {
+  font-family: "Outfit Bold";
+}
+
+.nutritrion-value {
+  font-family: "Outfit Bold";
+  color: var(--color-accent-title);
+  padding-left: 0;
+}
+
+@media (min-width: 400px) {
+  main {
+    background-color: var(--color-primary-lighter);
+    padding: var(--spacing-xl);
+  }
+
+  main > section {
+    background-color: var(--color-base);
+    max-width: 800px;
+    border-radius: var(--spacing-xl);
+    padding: var(--spacing-xl);
+  }
+
+  img {
+    border-radius: var(--spacing-l);
+  }
+
+  .wrapper {
+    width: 100%;
+  }
 }
